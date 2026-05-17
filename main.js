@@ -1,26 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 0. False Preloader Logic
-    const preloader = document.getElementById('preloader');
-    
-    if (preloader) {
-        // Block user scrolling immediately
-        document.body.classList.add('loading-active');
-        
-        // Exact 2-second false preload duration
-        setTimeout(() => {
-            preloader.classList.add('fade-out');
-            
-            // Enable scrolling and trigger entrance animations
-            document.body.classList.remove('loading-active');
-            document.body.classList.add('body-loaded');
-            
-            // Clean up preloader display after transition (1.2s)
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 1200);
-        }, 2000); // Exactly 2 seconds
-    }
-
     // 1. Scroll-triggered Navbar Color
     const navbar = document.querySelector('.sticky-nav');
     const sections = document.querySelectorAll('section, .footer-wrapper');

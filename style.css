@@ -573,155 +573,11 @@ body {
     }
 }
 
-/* --- Premium Minimalist Pre-loader --- */
-body.loading-active {
-  overflow: hidden !important;
-}
-
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: var(--color-base-dark);
-  z-index: 10000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1), opacity 1.2s cubic-bezier(0.85, 0, 0.15, 1);
-  will-change: transform, opacity;
-}
-
-.preloader.fade-out {
-  transform: translateY(-100%);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.loader-content {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.loader-logo {
-  height: 60px;
-  width: auto;
-  opacity: 0;
-  transform: translateY(20px) scale(0.95);
-  filter: brightness(0) invert(1);
-  animation: loaderFadeIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-  animation-delay: 0.1s;
-}
-
-.loader-line-wrapper {
-  width: 120px;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
-  overflow: hidden;
-  position: relative;
-  opacity: 0;
-  animation: loaderLineFadeIn 0.4s ease forwards;
-  animation-delay: 0.4s;
-}
-
-.loader-line {
-  width: 100%;
-  height: 100%;
-  background: #FFD200; /* Beautiful premium yellow/gold */
-  box-shadow: 0 0 8px #FFD200, 0 0 4px #FFD200; /* Glowing light effect */
-  position: absolute;
-  left: -100%;
-  animation: loaderProgress 1.0s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-  animation-delay: 0.5s;
-}
-
-.loader-tagline {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 13px;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  font-weight: 500;
-  margin-top: 8px;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: loaderTaglineIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-  animation-delay: 0.3s;
-}
-
-@keyframes loaderFadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes loaderLineFadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes loaderProgress {
-  0% { left: -100%; }
-  50% { left: -20%; width: 40%; }
-  100% { left: 100%; width: 100%; }
-}
-
-@keyframes loaderTaglineIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* --- Hero Section Staggered Entrance Animations (revealing after Preloader completes) --- */
+/* --- Hero Section Entrance Animations --- */
 .sticky-nav {
-  transform: translateY(-100%);
-  opacity: 0;
-  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease;
-}
-body.body-loaded .sticky-nav {
   transform: translateY(0);
   opacity: 1;
-  transition-delay: 0.2s;
-}
-
-.hero-content-center .display-title {
-  transform: translateY(20px);
-  opacity: 0;
-  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease;
-}
-body.body-loaded .hero-content-center .display-title {
-  transform: translateY(0);
-  opacity: 1;
-  transition-delay: 0.4s;
-}
-
-.hero-left-info {
-  transform: translateY(20px);
-  opacity: 0;
-  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease;
-}
-body.body-loaded .hero-left-info {
-  transform: translateY(0);
-  opacity: 1;
-  transition-delay: 0.6s;
-}
-
-.hero-right-cards {
-  transform: translateY(20px);
-  opacity: 0;
-  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease;
-}
-body.body-loaded .hero-right-cards {
-  transform: translateY(0);
-  opacity: 1;
-  transition-delay: 0.8s;
+  transition: var(--transition-smooth);
 }
 
 /* Fine-tune Stagger Reveal fallback classes */
@@ -730,7 +586,7 @@ body.body-loaded .hero-right-cards {
   transform: translateY(16px);
   transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-body.body-loaded .stagger-reveal.visible {
+.stagger-reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
