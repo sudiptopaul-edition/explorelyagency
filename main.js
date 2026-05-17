@@ -1,31 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 0. Preloader Logic
+    // 0. False Preloader Logic
     const preloader = document.getElementById('preloader');
     
-    const startAppReveal = () => {
-        if (document.body.classList.contains('body-loaded')) return;
+    if (preloader) {
+        // Block user scrolling immediately
+        document.body.classList.add('loading-active');
+        
+        // Exact 2-second false preload duration
         setTimeout(() => {
-            if (preloader) {
-                preloader.classList.add('fade-out');
-                // Remove preloader from display after animation
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 1200);
-            }
+            preloader.classList.add('fade-out');
+            
+            // Enable scrolling and trigger entrance animations
             document.body.classList.remove('loading-active');
             document.body.classList.add('body-loaded');
-        }, 1800); // 1.8s hold
-    };
-
-    if (preloader) {
-        document.body.classList.add('loading-active');
-        if (document.readyState === 'complete') {
-            startAppReveal();
-        } else {
-            window.addEventListener('load', startAppReveal);
-            // Backup fallback trigger
-            setTimeout(startAppReveal, 3500);
-        }
+            
+            // Clean up preloader display after transition (1.2s)
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 1200);
+        }, 2000); // Exactly 2 seconds
     }
 
     // 1. Scroll-triggered Navbar Color
