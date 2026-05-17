@@ -3,8 +3,10 @@
   --color-base-light: #F9F8F6;
   --color-base-dark: #1A1A1A;      /* Matches the dark footer and package bg */
   --color-accent-gray: #E6E4E0;
+  --color-accent-green: #2C3E2B;   /* Fixed: Added Missing Accent Color */
   
   --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-script: 'Great Vibes', cursive; /* Fixed: Added Missing Cursive Font Variable */
   
   --container-max: 1300px;
   --padding-section-y: 100px;
@@ -13,6 +15,11 @@
   --radius-pill: 9999px;
   
   --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Fixed: Added Missing Font Class Definition */
+.script-accent { 
+  font-family: var(--font-script); 
 }
 
 /* Global Reset */
@@ -131,7 +138,6 @@ body {
   0% { transform: scale(1); }
   100% { transform: scale(1.08); }
 }
-
 /* NAVBAR */
 .sticky-nav {
   position: fixed; top: 0; left: 0; width: 100%; padding: 24px var(--padding-section-x); z-index: 1000;
@@ -229,7 +235,6 @@ body {
 .h-card-top h4 { font-size: 15px; font-weight: 500; }
 .time-badge { font-size: 12px; opacity: 0.8; }
 .h-card-content p { font-size: 11px; opacity: 0.8; line-height: 1.4; }
-
 
 /* ---------------- ABOUT US ---------------- */
 .about-section {
@@ -475,6 +480,7 @@ body {
     transition: 0.3s ease; z-index: 9999; box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 .custom-toast.show { opacity: 1; transform: translate(-50%, 0); }
+
 
 /* ---------------- SECTION 7: FOOTER ---------------- */
 .footer-wrapper { padding: 40px var(--padding-section-x); background: #FFFFFF; }
