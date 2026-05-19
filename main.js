@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     // 1. Scroll-triggered Navbar Color
     const navbar = document.querySelector('.sticky-nav');
     const sections = document.querySelectorAll('section, .footer-wrapper');
@@ -124,12 +124,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const nextBtn = docCenter.querySelector('.ctrl-btn:last-child');
         
         const updateSlide = () => {
-            if (imgEl) imgEl.style.opacity = '0.5';
+            imgEl.style.opacity = '0.5';
             setTimeout(() => {
-                if (imgEl) imgEl.src = slides[currentSlide].img;
-                if (subtitleEl) subtitleEl.textContent = slides[currentSlide].subtitle;
-                if (titleEl) titleEl.textContent = slides[currentSlide].title;
-                if (imgEl) imgEl.style.opacity = '1';
+                imgEl.src = slides[currentSlide].img;
+                subtitleEl.textContent = slides[currentSlide].subtitle;
+                titleEl.textContent = slides[currentSlide].title;
+                imgEl.style.opacity = '1';
             }, 150);
         };
         if (imgEl) imgEl.style.transition = 'opacity 0.15s ease';
@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Footer Subscribe Notification
     const subscribeBtn = document.querySelector('.footer-subscribe button');
     const subscribeInput = document.querySelector('.footer-subscribe input');
-    if (subscribeBtn && subscribeInput) {
+    if (subscribeBtn) {
         subscribeBtn.addEventListener('click', (e) => {
             e.preventDefault();
             if (subscribeInput.value.trim() !== '') {
