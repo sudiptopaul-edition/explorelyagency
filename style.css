@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --color-primary: #C07A4A;        /* Terracotta Warm Earth */
   --color-base-light: #F9F8F6;
   --color-base-dark: #1A1A1A;      /* Matches the dark footer and package bg */
@@ -146,10 +146,12 @@ body {
 .sticky-nav.nav-theme-light .brand-logo { filter: brightness(0); }
 
 .sticky-nav.nav-theme-light .nav-links-glass-wrapper {
-  background: rgba(0, 0, 0, 0.05); border-color: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.9); border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 .sticky-nav.nav-theme-light .nav-btn-book {
-  color: #121212; background: rgba(0, 0, 0, 0.05); border-color: rgba(0, 0, 0, 0.1);
+  color: #121212; background: rgba(255, 255, 255, 0.9); border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 .sticky-nav.nav-theme-light .nav-btn-book:hover { background: rgba(0, 0, 0, 0.1); }
 .sticky-nav.nav-theme-light .circle-arrow { background: #121212; color: #FFF; }
@@ -161,7 +163,7 @@ body {
 .nav-links-glass-wrapper {
   position: absolute; left: 50%; transform: translateX(-50%);
   display: flex; align-items: center;
-  background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(16px);
+  background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 40px; padding: 4px;
 }
 .nav-item {
@@ -173,7 +175,7 @@ body {
 }
 .nav-btn-book {
   display: flex; align-items: center; gap: 12px; padding: 6px 6px 6px 20px;
-  background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(16px);
+  background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 40px;
   color: #FFF; text-decoration: none; font-size: 14px; transition: var(--transition-smooth);
 }
@@ -592,10 +594,10 @@ body {
 }
 
 .logo-wrapper {
-  background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(12px);
-  border-radius: 16px; padding: 4px 16px; border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(24px);
+  border-radius: 16px; padding: 4px 16px; border: 1px solid rgba(255, 255, 255, 0.2);
   display: inline-flex; align-items: center; transition: all 0.4s ease;
 }
 .sticky-nav.nav-theme-light .logo-wrapper {
-  background: rgba(0, 0, 0, 0.05); border-color: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.95); border-color: rgba(0, 0, 0, 0.1); box-shadow: 0 4px 24px rgba(0,0,0,0.06);
 }
